@@ -1,12 +1,20 @@
-/*! angular-s3-upload - v0.0.3 - 2014-10-02
+/*! angular-s3-upload - v0.0.5 - 2014-10-02
 * Copyright (c) 2014 ; Licensed  */
+  /*! angular-facebook-insight - v0.6.1 - 2014-07-13
+* Copyright (c) 2014 ; Licensed  */
+'use strict';
+
+var page_id = 0;
+
+angular.module("angular-s3-upload-tpls", 
+  ["templates/angular-s3-upload-button.html"]);
 /*! angular-csv-import - v0.0.6 - 2014-07-11
 * Copyright (c) 2014 ; Licensed  */
 /*! angular-csv-import - v0.0.4 - 2014-07-10
 * Copyright (c) 2014 ; Licensed  */
 'use strict';
 
-var ngS3Upload = angular.module('ngS3Upload', []);
+var ngS3Upload = angular.module('ngS3Upload', ["angular-s3-upload-tpls"]);
 
 ngS3Upload.directive('ngS3Upload', [ '$upload', function($upload) {
   return {
@@ -25,7 +33,7 @@ ngS3Upload.directive('ngS3Upload', [ '$upload', function($upload) {
       awsRegion: '@',
       bucket: '@'
     },
-    templateUrl: 'views/components/file-upload-button.html',
+    templateUrl: 'templates/angular-s3-upload-button.html',
     link: function(scope, element, attr) {
       scope.awsApi.getAWSToken(scope.key).then(function(data){
         scope.aws = {};
@@ -87,4 +95,15 @@ ngS3Upload.directive('ngS3Upload', [ '$upload', function($upload) {
       };
     }
   };
+}]);
+angular.module('templates/angular-s3-upload-button.html', []).run(['$templateCache', function($templateCache) {
+  'use strict';
+
+  $templateCache.put('templates/angular-s3-upload-button.html',
+    "<div class=\"upload-button\">\n" +
+    "\t<button class=\"{{buttonClass}}\" lng=\"{{label}}\"></button>\n" +
+    "\t<input type=\"file\" ng-file-select=\"onFileSelect($files, index)\"></input>\n" +
+    "</div>"
+  );
+
 }]);
