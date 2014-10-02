@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         stripBanners: true
       },
       dist: {
-        src: ['lib/<%= pkg.name %>.js'],
+        src: ['lib/<%= pkg.name %>-tpls.js', 'lib/<%= pkg.name %>.js', 'templates/*.js'],
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
@@ -70,7 +70,13 @@ module.exports = function(grunt) {
         globals: {
           jQuery: true,
           angular: false,
-          Odometer: false
+          Odometer: false,
+          FB: false,
+          d3: false,
+          google: false,
+          console: false,
+          resolve: false,
+          deferred: false
         }
       },
       gruntfile: {
@@ -107,12 +113,24 @@ module.exports = function(grunt) {
         base: 'examples/dist'
       },
       src: '**/*'
+    },
+    ngtemplates: {
+      app: {
+        cwd: '.',
+        src: ['templates/**.html'],
+        dest: 'templates/templates.js',
+        options: {
+          module: function(data) {
+            return data;
+          },
+          standalone: true
+        }
+      }
     }
   });
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'cssmin']);
+  grunt.registerTask('default', ['jshint', 'ngtemplates', 'concat', 'uglify', 'cssmin']);
 
   grunt.registerTask('pages', ['gh-pages']);
-
 };
