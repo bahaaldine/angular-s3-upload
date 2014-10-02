@@ -3,9 +3,14 @@
 
 # Angular S3 Upload
 
-## Demo page
+Angular S3 upload is a directive that buils a file input button 
+to upload data on your AWS S3 server.
 
-http://bahaaldine.github.io/angular-s3-upload
+It supports 
+ - upload success, failure, progress callback.
+ - input button customization
+ - passing a promise that contains your AWS S3 token.
+ - i18n.
 
 ## Setup 
 1. Create AWS S3 bucket
@@ -65,7 +70,7 @@ expand the "Permissions" sections and click on the "Add more permissions" button
 		"signature":"HMAC_SHA1_OF_POLICY_AND_YOUR_AWS_SECRET",
 		"key":"YOUR_AWS_ACCESS_KEY"
 	}
-	```
+	``
 
 
 ## Usage
