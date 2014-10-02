@@ -70,7 +70,7 @@ expand the "Permissions" sections and click on the "Add more permissions" button
 		"signature":"HMAC_SHA1_OF_POLICY_AND_YOUR_AWS_SECRET",
 		"key":"YOUR_AWS_ACCESS_KEY"
 	}
-	``
+	```
 
 
 ## Usage
