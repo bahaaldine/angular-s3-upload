@@ -14,7 +14,7 @@ angular.module("angular-s3-upload-tpls",
 * Copyright (c) 2014 ; Licensed  */
 'use strict';
 
-var ngS3Upload = angular.module('ngS3Upload', ["angular-s3-upload-tpls"]);
+var ngS3Upload = angular.module('angular-s3-upload', ["angular-s3-upload-tpls"]);
 
 ngS3Upload.directive('ngS3Upload', [ '$upload', function($upload) {
   return {
