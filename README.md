@@ -152,10 +152,6 @@ The callback to trigger during upload
 
 A promise that return AWS S3 token. 
 
-- **aws-region**
-
-AWS S3 region
-
 - **label**
 
 A label for your upload button. Usefull for i18n.
