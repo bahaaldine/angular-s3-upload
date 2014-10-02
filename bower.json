@@ -28,6 +28,7 @@
         "README.md"
     ],
     "dependencies": {
+        "danialfarid-angular-file-upload": "~1.4.0"
     },
     "devDependencies": {
     }
