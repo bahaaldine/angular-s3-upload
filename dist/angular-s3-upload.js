@@ -1,3 +1,13 @@
+/*! angular-s3-upload - v0.0.12 - 2014-10-02
+* Copyright (c) 2014 ; Licensed  */
+  /*! angular-facebook-insight - v0.6.1 - 2014-07-13
+* Copyright (c) 2014 ; Licensed  */
+'use strict';
+
+var page_id = 0;
+
+angular.module("angular-s3-upload-tpls", 
+  ["templates/angular-s3-upload-button.html"]);
 /*! angular-s3-upload - v0.0.9 - 2014-10-02
 * Copyright (c) 2014 ; Licensed  */
   /*! angular-facebook-insight - v0.6.1 - 2014-07-13
@@ -27,7 +37,6 @@ ngS3Upload.directive('ngS3Upload', [ '$upload', function($upload) {
       failureCallback: '=',
       progressCallback: '=',
       awsApi:'=',
-      awsRegion: '@',
       bucket: '@',
       filename: '@'
     },
@@ -80,13 +89,8 @@ ngS3Upload.directive('ngS3Upload', [ '$upload', function($upload) {
                 $scope.progressCallback(evt);
               }
           }).success(function(data, status, headers, config) {
-            var rootPath = "";
-            if ( typeof $scope.awsRegion !== "undefined" ) {
-              rootPath = "https://s3-"+$scope.awsRegion+".amazonaws.com/";
-            }
-            var url = rootPath+$scope.bucket+"/"+fullPath;
             if ( typeof $scope.successCallback !== "undefined" ) {
-              $scope.successCallback(url);
+              $scope.successCallback($scope.filename, data, status, headers, config);
             }
           }).error(function(data, status, headers, config) {
             if ( typeof $scope.failureCallback !== "undefined" ) {
@@ -97,16 +101,6 @@ ngS3Upload.directive('ngS3Upload', [ '$upload', function($upload) {
       };
     }
   };
-}]);
-angular.module('templates/angular-s3-upload-button.html', []).run(['$templateCache', function($templateCache) {
-  'use strict';
-
-  $templateCache.put('templates/angular-s3-upload-button.html',
-    "<div class=\"upload-button\">\n" +
-    "\t<button class=\"{{buttonClass}}\" lng=\"{{label}}\"></button>\n" +
-    "\t<input type=\"file\" ng-file-select=\"onFileSelect($files, index)\"></input>\n" +
-    "</div>"
-  );
 }]);
 angular.module('templates/angular-s3-upload-button.html', []).run(['$templateCache', function($templateCache) {
   'use strict';
