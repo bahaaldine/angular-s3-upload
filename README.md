@@ -12,7 +12,7 @@ It supports
  - passing a promise that contains your AWS S3 token.
  - i18n.
 
-## Setup 
+## Prerequisites 
 1. Create AWS S3 bucket
 
 2. Grant "put/delete" permissions to everyone 
@@ -73,7 +73,7 @@ expand the "Permissions" sections and click on the "Add more permissions" button
 	```
 
 
-## Usage
+## Installation
 
 Install depedencies using bower: 
 ```
