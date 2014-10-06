@@ -1,4 +1,4 @@
-/*! angular-s3-upload - v0.0.12 - 2014-10-02
+/*! angular-s3-upload - v0.0.13 - 2014-10-06
 * Copyright (c) 2014 ; Licensed  */
   /*! angular-facebook-insight - v0.6.1 - 2014-07-13
 * Copyright (c) 2014 ; Licensed  */
@@ -8,10 +8,13 @@ var page_id = 0;
 
 angular.module("angular-s3-upload-tpls", 
   ["templates/angular-s3-upload-button.html"]);
-/*! angular-s3-upload - v0.0.9 - 2014-10-02
-* Copyright (c) 2014 ; Licensed  */
-  /*! angular-facebook-insight - v0.6.1 - 2014-07-13
-* Copyright (c) 2014 ; Licensed  */
+'use strict';
+
+var page_id = 0;
+
+angular.module("angular-s3-upload-tpls", 
+  ["templates/angular-s3-upload-button.html"]);
+
 'use strict';
 
 var page_id = 0;
@@ -68,7 +71,7 @@ ngS3Upload.directive('ngS3Upload', [ '$upload', function($upload) {
             $scope.filename = $scope.createUUID();
           }
           var fullPath = $scope.key+"/"+$scope.filename;
-          if ( typeof $scope.path == "undefined" ) {
+          if ( typeof $scope.path != "undefined" ) {
             fullPath = $scope.key+"/"+$scope.path+"/"+$scope.filename;
           }
           $scope.upload = $upload.upload({
