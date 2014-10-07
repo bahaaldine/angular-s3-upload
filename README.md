@@ -87,7 +87,7 @@ Add js libraries to your application:
     ...
 ```
 
-Add ngCSVImport module to you application
+Add ngS3Upload module to you application
 ```javascript
 	...
 	angular
