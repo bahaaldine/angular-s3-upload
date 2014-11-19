@@ -1,4 +1,4 @@
-/*! angular-s3-upload - v0.0.18 - 2014-11-19
+/*! angular-s3-upload - v0.0.20 - 2014-11-19
 * Copyright (c) 2014 ; Licensed  */
   /*! angular-facebook-insight - v0.6.1 - 2014-07-13
 * Copyright (c) 2014 ; Licensed  */
@@ -78,11 +78,11 @@ ngS3Upload.directive('ngS3Upload', [ '$upload', function($upload) {
               }
           }).success(function(data, status, headers, config) {
             if ( typeof $scope.successCallback !== "undefined" ) {
-              $scope.successCallback($scope.filename, data, status, headers, config, $scope.index);
+              $scope.successCallback($scope.filename, $scope.index, data, status, headers, config);
             }
           }).error(function(data, status, headers, config) {
             if ( typeof $scope.failureCallback !== "undefined" ) {
-              $scope.failureCallback(data, status, headers, config, $scope.index);
+              $scope.failureCallback($scope.index, data, status, headers, config);
             } // die silently
           });
         }
