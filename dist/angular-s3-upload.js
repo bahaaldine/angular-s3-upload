@@ -1,4 +1,4 @@
-/*! angular-s3-upload - v0.0.17 - 2014-11-19
+/*! angular-s3-upload - v0.0.18 - 2014-11-19
 * Copyright (c) 2014 ; Licensed  */
   /*! angular-facebook-insight - v0.6.1 - 2014-07-13
 * Copyright (c) 2014 ; Licensed  */
