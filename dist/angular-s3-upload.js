@@ -1,4 +1,4 @@
-/*! angular-s3-upload - v0.0.13 - 2014-10-06
+/*! angular-s3-upload - v0.0.17 - 2014-11-19
 * Copyright (c) 2014 ; Licensed  */
   /*! angular-facebook-insight - v0.6.1 - 2014-07-13
 * Copyright (c) 2014 ; Licensed  */
@@ -6,23 +6,8 @@
 
 var page_id = 0;
 
-angular.module("angular-s3-upload-tpls", 
-  ["templates/angular-s3-upload-button.html"]);
-'use strict';
-
-var page_id = 0;
-
-angular.module("angular-s3-upload-tpls", 
-  ["templates/angular-s3-upload-button.html"]);
-
-'use strict';
-
-var page_id = 0;
-
-angular.module("angular-s3-upload-tpls", 
-  ["templates/angular-s3-upload-button.html"]);
-'use strict';
 angular.module("angular-s3-upload-tpls", ["templates/angular-s3-upload-button.html"]);
+'use strict';
 
 var ngS3Upload = angular.module('angular-s3-upload', ["angular-s3-upload-tpls"]);
 ngS3Upload.directive('ngS3Upload', [ '$upload', function($upload) {
@@ -93,11 +78,11 @@ ngS3Upload.directive('ngS3Upload', [ '$upload', function($upload) {
               }
           }).success(function(data, status, headers, config) {
             if ( typeof $scope.successCallback !== "undefined" ) {
-              $scope.successCallback($scope.filename, data, status, headers, config);
+              $scope.successCallback($scope.filename, data, status, headers, config, $scope.index);
             }
           }).error(function(data, status, headers, config) {
             if ( typeof $scope.failureCallback !== "undefined" ) {
-              $scope.failureCallback(data, status, headers, config);
+              $scope.failureCallback(data, status, headers, config, $scope.index);
             } // die silently
           });
         }
