@@ -1,4 +1,4 @@
-/*! angular-s3-upload - v0.0.24 - 2014-11-20
+/*! angular-s3-upload - v0.0.25 - 2014-11-20
 * Copyright (c) 2014 ; Licensed  */
   /*! angular-facebook-insight - v0.6.1 - 2014-07-13
 * Copyright (c) 2014 ; Licensed  */
@@ -104,11 +104,11 @@ ngS3Upload.directive('ngS3Upload', [ '$upload', '$q', function($upload, $q) {
       $scope.onFileSelect = function($files) {
         for ( var i = 0; i < $files.length; i++) {
           var file = $files[i];
-          if ( angular.isDefined($scope.filename) ) {
+          if ( !angular.isDefined($scope.filename) ) {
               $scope.filename = $scope.createUUID();
           }
           var fullPath = $scope.key+"/"+$scope.filename;
-          if ( !angular.isDefined($scope.path) ) {
+          if ( angular.isDefined($scope.path) ) {
             fullPath = $scope.key+"/"+$scope.path+"/"+$scope.filename;
           }
 
