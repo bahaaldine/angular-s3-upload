@@ -113,6 +113,8 @@ Include the **ng-csv-import** element with its options:
      progress-callback="..."
      aws-api="..."
      aws-region="..."
+     max-with="..."
+     max-height="..."
      label="..."></ng-s3-upload>
 ```
 
@@ -155,3 +157,7 @@ A promise that return AWS S3 token.
 - **label**
 
 A label for your upload button. Usefull for i18n.
+
+- **max-width** & **max-height**
+
+If both set, and if the file is an image then it will be resized with of the respect of the ratio.
