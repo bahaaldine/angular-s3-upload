@@ -11,6 +11,7 @@ It supports
  - input button customization
  - passing a promise that contains your AWS S3 token.
  - i18n.
+ - image resizing
 
 ## Prerequisites 
 1. Create AWS S3 bucket
