@@ -1,4 +1,4 @@
-/*! angular-s3-upload - v0.0.25 - 2014-11-20
+/*! angular-s3-upload - v0.0.26 - 2014-12-09
 * Copyright (c) 2014 ; Licensed  */
   /*! angular-facebook-insight - v0.6.1 - 2014-07-13
 * Copyright (c) 2014 ; Licensed  */
@@ -10,7 +10,7 @@ angular.module("angular-s3-upload-tpls", ["templates/angular-s3-upload-button.ht
 var ngS3Upload = angular.module('angular-s3-upload', ["angular-s3-upload-tpls"]);
 ngS3Upload.directive('ngS3Upload', [ '$upload', '$q', function($upload, $q) {
   return {
-    restrict: 'E',
+    restrict: 'EA',
     replace: true,
     scope: {
       label: '@',
