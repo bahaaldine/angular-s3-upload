@@ -1,5 +1,5 @@
-/*! angular-s3-upload - v0.0.26 - 2014-12-09
-* Copyright (c) 2014 ; Licensed  */
+/*! angular-s3-upload - v0.0.27 - 2015-03-04
+* Copyright (c) 2015 ; Licensed  */
   /*! angular-facebook-insight - v0.6.1 - 2014-07-13
 * Copyright (c) 2014 ; Licensed  */
 'use strict';
@@ -175,8 +175,11 @@ angular.module('templates/angular-s3-upload-button.html', []).run(['$templateCac
 
   $templateCache.put('templates/angular-s3-upload-button.html',
     "<div class=\"upload-button\">\n" +
-    "\t<button class=\"{{buttonClass}}\" lng=\"{{label}}\"></button>\n" +
-    "\t<input type=\"file\" ng-file-select=\"onFileSelect($files, index)\"></input>\n" +
+    "\t<label for=\"file\" class=\"ui icon button {{buttonClass}}\">\n" +
+    "\t\t<i class=\"file icon\"></i><span lng=\"{{label}}\"></span>\n" +
+    "\t</label>\n" +
+    "\t<input type=\"file\" id=\"file\" style=\"display:none\" \n" +
+    "\t\tng-file-select=\"onFileSelect($files, index)\"></input>\n" +
     "</div>"
   );
 

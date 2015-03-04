@@ -1,4 +1,7 @@
 <div class="upload-button">
-	<button class="{{buttonClass}}" lng="{{label}}"></button>
-	<input type="file" ng-file-select="onFileSelect($files, index)"></input>
+	<label for="file" class="ui icon button {{buttonClass}}">
+		<i class="file icon"></i><span lng="{{label}}"></span>
+	</label>
+	<input type="file" id="file" style="display:none" 
+		ng-file-select="onFileSelect($files, index)"></input>
 </div>
