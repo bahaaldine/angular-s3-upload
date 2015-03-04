@@ -1,6 +1,6 @@
 {
     "name": "angular-s3-upload",
-    "version": "0.0.28",
+    "version": "0.0.29",
     "main": "dist/angular-s3-upload",
     "license": "MIT",
     "authors": [
